@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <main className='font-normal'>
-          {/* Header */}
+          {/* Header hghghhhhgggg */}
           {children}
           {/* Footer */}
           </main>
