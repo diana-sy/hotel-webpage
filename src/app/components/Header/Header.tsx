@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import {VscAccount} from "react-icons/vsc";
-import {MdDarkMode} from "react-icons/md";
+import {MdDarkMode, MdOutlineLightMode} from "react-icons/md";
+import { useContext } from "react";
+import ThemeContext from "@/app/context/themeContext";
 
 const Header = () => {
+
+    const {darkTheme, setDarkTheme}= useContext(ThemeContext);
+
   return (
    <header className="py-10 px-4 container mx-auto text-xl flex flex-wrap items-center justify-between md:flex-nowrap">
     <div className="flex items-center w-full md:2/3">
@@ -16,7 +23,16 @@ const Header = () => {
 </Link>
 </li>
 <li className="ml-2">
-<MdDarkMode className="cursor-pointer"/>
+    {darkTheme ? (<MdOutlineLightMode className="cursor-pointer"
+    onClick={()=> {
+     setDarkTheme(false); 
+     localStorage.removeItem("hotel-theme");  
+    }}/>) :
+(<MdDarkMode className="cursor-pointer" onClick={()=> {
+    setDarkTheme(true); 
+    localStorage.setItem("hotel-theme", "true");
+}}/>)
+}
 </li>
 </ul>
     </div>

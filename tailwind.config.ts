@@ -2,6 +2,8 @@ import type { Config } from 'tailwindcss';
 const {fontFamily} = require('tailwindcss/defaultTheme');
 
 const config: Config = {
+
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,8 +15,8 @@ const config: Config = {
         primary: '#038C7F',
         secondary:'#F2C641',
         tertiary:{
-          dark:'#2a9d2c',
-          light:'#67bef0'
+          dark:'#038C7F',
+          light:'#F2C641'
         },
       },
       fontFamily: {
