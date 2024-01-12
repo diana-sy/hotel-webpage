@@ -39,6 +39,7 @@ const inputStyle ="border border-gray-300 sm:text-sm text-black rounded:lg block
     id="email" 
     placeholder="your_email@mail.com" 
     required
+    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
     className={inputStyle}
     />
 
@@ -48,10 +49,21 @@ const inputStyle ="border border-gray-300 sm:text-sm text-black rounded:lg block
     id="password" 
     placeholder="Your Password"
     required
-    minLength={6}
+    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+    title= "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
     className={inputStyle}
     />
   
+<button
+  type="submit"
+  className="w-full bg-tertiary-light focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white "
+>
+    Sign Up
+</button>
+
+<button className="text-blue-600 underline">
+    Login
+</button>
 </form>
 
 </div>
