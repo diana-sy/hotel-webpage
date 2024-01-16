@@ -12,7 +12,7 @@ import{BiMessageDetail} from "react-icons/bi";
 
            <h4 className="font-semibold text-[40px] py-6">Contact</h4> 
            
-           <div className="flex flex-wrap gap-16 items-center justify-between align-text-bottom">
+           <div className="flex flex-wrap gap-16 items-center justify-between">
            <div className="flex-1">
           <p> Yliopistokatu 13 A</p>
           <div className="flex items-center py-4">
@@ -29,7 +29,7 @@ import{BiMessageDetail} from "react-icons/bi";
           </div>
            </div>
 
-           <div className="flex-1 md:text-right">
+           <div className="flex-1 md:text-left">
             <p className="pb-4"> About Us</p>
             <p className="pb-4"> Get in Touch</p>
             <p className="pb-4"> Our Privacy Commitment</p>
@@ -37,7 +37,7 @@ import{BiMessageDetail} from "react-icons/bi";
             <p> Customer Assistence</p>
            </div>
 
-            <div className="flex-1 md:text-right">
+            <div className="flex-1 md:text-left">
                 <p className="pb-4"> Wellness </p>
                 <p className="pb-4"> Fitness </p>
                 <p className="pb-4"> Sports </p>

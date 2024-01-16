@@ -1,9 +1,38 @@
+"use client";
+
+import { ChangeEvent, FormEvent, useState } from "react";
 import {AiFillGithub} from "react-icons/ai";
 import {FcGoogle} from "react-icons/fc";
 
+const defaultFormData = {
+  email :"",
+  password :"",
+  name :"",
+}
+
 const Auth = () => {
 
-const inputStyle ="border border-gray-300 sm:text-sm text-black rounded:lg block w-full p-2.5 focus:outline-none dark:shadow-[0_10px_15px_-3px_rgb(242,198,65)] "
+  const [formData, setFormData] = useState(defaultFormData);
+
+const inputStyle =
+"border border-gray-300 sm:text-sm text-black rounded:lg block w-full p-2.5 focus:outline-none dark:shadow-[0_10px_15px_-3px_rgb(242,198,65)] "
+
+const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+ const { name, value } = event.target;
+ setFormData({...formData, [name]: value });
+};
+
+const handleSubmit =async (events: FormEvent<HTMLFormElement>) => {
+  events.preventDefault();
+  try{
+    console.log(formData);
+  } catch(error){
+    console.log(error);
+} finally{
+  setFormData(defaultFormData);
+};
+};
+
 
   return (
 <section className="container mx-auto">
@@ -23,35 +52,40 @@ const inputStyle ="border border-gray-300 sm:text-sm text-black rounded:lg block
 </span>
 </div>
 
-<form className="space-y-4 md:space-y-6">
+<form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
     <input 
     type="text" 
-    name="name"
-    id="name" 
+    name="name" 
     placeholder="John Doe" 
     required
+    pattern="[A-Za-z ]{1,32}"
+    title="Please, follow the example: Name Surname (like : John Doe)"
     className={inputStyle}
+    value={formData.name}
+    onChange={handleInputChange}
     />
    
     <input 
     type="email" 
-    name="email"
-    id="email" 
+    name="email" 
     placeholder="your_email@mail.com" 
     required
     pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
     className={inputStyle}
+    value={formData.email}
+    onChange={handleInputChange}
     />
 
     <input 
     type="password" 
-    name="password"
-    id="password" 
+    name="password" 
     placeholder="Your Password"
     required
     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
     title= "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
     className={inputStyle}
+    value={formData.password}
+    onChange={handleInputChange}
     />
   
 <button
