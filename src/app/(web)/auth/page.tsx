@@ -3,6 +3,9 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import {AiFillGithub} from "react-icons/ai";
 import {FcGoogle} from "react-icons/fc";
+import {signUp} from "next-auth-sanity/client";
+import {signIn, useSession} from "next-auth/react";
+import toast from "react-hot-toast";
 
 const defaultFormData = {
   email :"",
@@ -15,7 +18,7 @@ const Auth = () => {
   const [formData, setFormData] = useState(defaultFormData);
 
 const inputStyle =
-"border border-gray-300 sm:text-sm text-black rounded:lg block w-full p-2.5 focus:outline-none dark:shadow-[0_10px_15px_-3px_rgb(242,198,65)] "
+"border border-gray-300 sm:text-sm text-black rounded-lg block w-full p-2.5 focus:outline-none dark:shadow-[0_10px_15px_-3px_rgb(242,198,65)] "
 
 const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
  const { name, value } = event.target;
@@ -25,9 +28,13 @@ const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
 const handleSubmit =async (events: FormEvent<HTMLFormElement>) => {
   events.preventDefault();
   try{
-    console.log(formData);
+    const user=await signUp (formData)
+    if (user){
+      toast.success("Success! Please, sign in.");
+    }
   } catch(error){
     console.log(error);
+    toast.error("Oops! Something went wrong");
 } finally{
   setFormData(defaultFormData);
 };
