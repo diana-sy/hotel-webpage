@@ -1,3 +1,16 @@
+IN PROGRESS!
+
+I started this project to learn Typescript and Next.js.
+This web page is created by using:
+1. Ubuntu and WSL
+2. Typescript and Next.js
+3. Sanity and Node.js
+4. Tailwind CSS
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
