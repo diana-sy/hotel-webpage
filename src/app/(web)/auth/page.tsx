@@ -31,14 +31,15 @@ const {data: session} = useSession();
 
 const router = useRouter();
 useEffect(()=>{
-
-});
+ if(session) router.push("/");
+}, [router, session]);
 
 const loginHandler = async () => {
   try{
  await signIn();
+ router.push("/");
   }catch(err){
-    console.log(err);
+    // console.log(err);
     toast.error("Something went wrong!");
   }
 };
@@ -51,7 +52,7 @@ const handleSubmit =async (events: FormEvent<HTMLFormElement>) => {
       toast.success("Success! Please, sign in.");
     }
   } catch(error){
-    console.log(error);
+    // console.log(error);
     toast.error("Oops! Something went wrong.");
 } finally{
   setFormData(defaultFormData);
