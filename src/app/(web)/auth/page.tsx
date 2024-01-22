@@ -1,11 +1,12 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import {AiFillGithub} from "react-icons/ai";
 import {FcGoogle} from "react-icons/fc";
 import {signUp} from "next-auth-sanity/client";
 import {signIn, useSession} from "next-auth/react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const defaultFormData = {
   email :"",
@@ -25,6 +26,23 @@ const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
  setFormData({...formData, [name]: value });
 };
 
+const {data: session} = useSession();
+// console.log(session);
+
+const router = useRouter();
+useEffect(()=>{
+
+});
+
+const loginHandler = async () => {
+  try{
+ await signIn();
+  }catch(err){
+    console.log(err);
+    toast.error("Something went wrong!");
+  }
+};
+
 const handleSubmit =async (events: FormEvent<HTMLFormElement>) => {
   events.preventDefault();
   try{
@@ -34,7 +52,7 @@ const handleSubmit =async (events: FormEvent<HTMLFormElement>) => {
     }
   } catch(error){
     console.log(error);
-    toast.error("Oops! Something went wrong");
+    toast.error("Oops! Something went wrong.");
 } finally{
   setFormData(defaultFormData);
 };
@@ -53,9 +71,14 @@ const handleSubmit =async (events: FormEvent<HTMLFormElement>) => {
     OR
 </p>
 <span className="inline-flex items-center">
-<AiFillGithub className="mr-3 text-4xl cursor-pointer text-black dark:text-white"/>
+<AiFillGithub
+ onClick={loginHandler} 
+ className="mr-3 text-4xl cursor-pointer text-black dark:text-white"/>
+ {" "}
 |
-<FcGoogle className="ml-3 text-4xl cursor-pointer"/>
+<FcGoogle 
+onClick={loginHandler} 
+className="ml-3 text-4xl cursor-pointer"/>
 </span>
 </div>
 
@@ -102,7 +125,9 @@ const handleSubmit =async (events: FormEvent<HTMLFormElement>) => {
     Sign Up
 </button>
 
-<button className="text-blue-600 underline">
+<button 
+onClick={loginHandler} 
+className="text-blue-600 underline">
     Login
 </button>
 </form>

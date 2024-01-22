@@ -8,7 +8,7 @@ const user ={
     fields:[
       defineField( {
         name:"isAdmin",
-        title:"isAdmin",
+        title:"Admin",
         type:"boolean",
         description:"Ckecking if the user is admin",
         initialValue:false,
@@ -18,27 +18,38 @@ const user ={
       }),
       defineField( {
         name:"name",
-        title:"name",
+        title:"Name",
         type:"string",
-        description:"Name of the user",
+        description:"User's name",
         validation: Rule => Rule.required(),
         readOnly: true,
       }),
       defineField( {
         name:"image",
-        title:"image",
+        title:"Image",
         type:"url",
       }),
       defineField( {
         name:"password",
-        title:"password",
+        title:"Password",
         type:"string",
         hidden: true,
       }),
       defineField( {
-        name:"about",
-        title:"about",
+        name:"email",
+        title:"Email",
         type:"string",
+        description:"User's email address",
+      }),
+      defineField( {
+        name:"emailVerified",
+        type:"datetime",
+        hidden: true,
+      }),
+      defineField( {
+        name:"about",
+        title:"About",
+        type:"text",
         description:"Short info about the user",
       }),
 ],
