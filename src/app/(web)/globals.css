@@ -15,7 +15,11 @@
 }
 
 .btn-tertiary {
-  @apply px-4 md:px-[30px] lg:px-[65px] py-2 md:py-3 border-4  border-tertiary-light shadow-sm dark:shadow-[0_1px_8px_2px_rgb(217,178,58)] focus:outline-none rounded-lg  md:rounded-2xl font-bold text-gray-800 text-base md:text-xl text-center cursor-pointer dark:text-white hover:scale-110 duration-300 transition-all;
+  @apply px-4 md:px-[30px] lg:px-[65px] py-2 md:py-3 border-4  border-tertiary-light shadow-sm dark:shadow-[0_1px_8px_2px_rgb(217,178,58)] focus:outline-none rounded-lg  md:rounded-2xl font-bold  text-base md:text-xl text-center text-tertiary-light cursor-pointer dark:text-tertiary-light hover:scale-110 duration-300 transition-all;
+}
+
+.btn-secondary {
+  @apply px-4 md:px-[30px] lg:px-[65px] py-2 md:py-3 border-4 bg-white dark:bg-black border-tertiary-light shadow-sm dark:shadow-[0_1px_8px_2px_rgb(217,178,58)] focus:outline-none rounded-lg  md:rounded-2xl font-bold text-gray-800 text-base md:text-xl text-center cursor-pointer dark:text-white hover:scale-110 duration-300 transition-all;
 }
 
 .font-heading{

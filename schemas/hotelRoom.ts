@@ -3,7 +3,7 @@ import { defineField } from "sanity";
 const roomTypes =[
     {title: "Standard", value: "standard"},
     {title: "Deluxe", value: "deluxe"},
-    {title: "Super Deluxe", value: "super-deluxe"},
+    {title: "Suite", value: "suite"},
 ]
 
 const hotelRoom = {
@@ -35,7 +35,7 @@ const hotelRoom = {
             name:"price",
             title:"Price of the room",
             type:"number",
-            validation: Rule => Rule.required().max(50).error("Maxim 50 characters allowed"),
+            validation: Rule => Rule.required().min(50).error("Maxim 50 characters allowed"),
         }),
       
         defineField( {
