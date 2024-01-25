@@ -10,7 +10,7 @@ const Gallery = () => {
                 <div className="w-1/2 p-1 md:p-2 h-48">
                     <Image
                     alt="gallery"
-                    className="img"
+                    className="img scale-animation"
                     src="/images/hero-deluxe.jpg"
                     width={200}
                    height={200}
@@ -20,7 +20,7 @@ const Gallery = () => {
                 <div className="w-1/2 p-1 md:p-2 h-48">
                     <Image
                     alt="gallery"
-                    className="img"
+                    className="img scale-animation"
                     src="/images/hero-suite.jpg"
                     width={200}
                    height={200}
@@ -30,7 +30,7 @@ const Gallery = () => {
                 <div className="w-full p-1 md:p-2 h-48">
                     <Image
                     alt="gallery"
-                    className="img"
+                    className="img scale-animation"
                     src="/images/hero-standart.jpg"
                     width={200}
                    height={200}
@@ -41,7 +41,7 @@ const Gallery = () => {
                 <div className="w-full p-1 md:p-2 h-48">
                     <Image
                     alt="gallery"
-                    className="img"
+                    className="img scale-animation"
                     src="/images/hero-standart.jpg"
                     width={200}
                    height={200}
@@ -51,7 +51,7 @@ const Gallery = () => {
                 <div className="w-1/2 p-1 md:p-2 h-48">
                     <Image
                     alt="gallery"
-                    className="img"
+                    className="img scale-animation"
                     src="/images/hero-deluxe.jpg"
                     width={200}
                    height={200}
@@ -61,7 +61,7 @@ const Gallery = () => {
                 <div className="w-1/2 p-1 md:p-2 h-48">
                     <Image
                     alt="gallery"
-                    className="img"
+                    className="img scale-animation"
                     src="/images/hero-suite.jpg"
                     width={200}
                    height={200}
