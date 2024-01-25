@@ -13,6 +13,6 @@ export default function Error({
         <button 
         className="btn-secondary mt-3"
         onClick={()=> reset()}
-        > Try Again</button>
+        > Try Again rr</button>
     </div>
 }
