@@ -1,7 +1,7 @@
 const NewsLetter = () => {
     return (
       <section className='container mx-auto '>
-        <form className='bg-[#169ed8] dark:bg-[#2c88af] text-white px-4 rounded-xl md:rounded-[30px] flex flex-col justify-center items-center py-6 md:py-14'>
+        <form className='bg-[#169ed8] dark:bg-[#2c88af] text-white  rounded-xl md:rounded-[30px] flex flex-col justify-center items-center py-6 md:py-14'>
           <p className='md:font-semibold text-lg md:text-xl text-center mb-3'>
             Would you like to know more about the Hotel and our offers?
           </p>

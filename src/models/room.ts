@@ -19,6 +19,7 @@
     }
 
 export type Room ={
+    type: string;
     _id: string;
     coverImage: CoverImage;
     description: string;

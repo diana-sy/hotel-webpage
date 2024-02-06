@@ -17,4 +17,18 @@ export const getFeaturedRoomQuery = groq`*[_type == "hotelRoom" && isFeatured ==
     petFriendly,
     breakfastIncluded
     
+}`;
+
+export const getRoomsQuery = groq `*[_type == "hotelRoom"]{
+    _id,
+    name,
+    slug,
+    description,
+    price,
+    images,
+    isFeatured,
+    coverImage,
+    dimension,
+    isBooked,
+    type
 }`
