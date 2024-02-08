@@ -11,6 +11,6 @@ export async function getFeaturedRoom(){
 }
 
 export async function getRooms(){
-    const result = await sanityClient.fetch <Room>(queries.getRoomsQuery);
+    const result = await sanityClient.fetch <Room[]>(queries.getRoomsQuery);
     return result;
 }

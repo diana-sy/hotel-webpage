@@ -1,5 +1,7 @@
 "use client";
 
+import RoomCard from "@/app/components/RoomCard/RoomCard";
+import Search from "@/app/components/Search/Search";
 import { getRooms } from "@/app/libs/apis";
 import { Room } from "@/models/room";
 import { useSearchParams } from "next/navigation";
@@ -18,7 +20,7 @@ const Rooms = () => {
     if (roomType) setRoomTypeFilter(roomType);
     if (searchQuery) setSearchQuery(searchQuery);
    
-  }, []);
+  }, [searchParams]);
 
   async function fetchData(){
     return getRooms ();
@@ -51,11 +53,25 @@ const Rooms = () => {
         return true;
     });
   };
+
   const filteredRooms = filterRooms(data || []);
-  console.log(filteredRooms);
+  // console.log(filteredRooms);
     return (
      
-    <div>page</div>
+   <div className="container mx-auto pt-10">
+    <Search 
+    roomTypeFilter = {roomTypeFilter}
+    searchQuery = {searchQuery}
+    setRoomTypeFilter = {setRoomTypeFilter}
+    setSearchQuery = {setSearchQuery}
+    />
+    <div className="flex mt-20 justify-between flex-wrap">
+      {filteredRooms.map(room =>(
+     <RoomCard key={room._id} room={room}/>
+      ))}
+
+    </div>
+   </div>
   )
 }
 
