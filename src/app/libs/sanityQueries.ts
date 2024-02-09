@@ -31,4 +31,24 @@ export const getRoomsQuery = groq `*[_type == "hotelRoom"]{
     dimension,
     isBooked,
     type
+}`;
+
+export const getRoomBySlugQuery = groq `*[_type ==  "hotelRoom" && slug.current == $slug][0] {
+ 
+    _id,
+    name,
+    slug,
+    description,
+    price,
+    images,
+    isFeatured,
+    coverImage,
+    dimension,
+    isBooked,
+    type,
+    numberOfBeds,
+    offeredAmenities,
+    specialNotes,
+    petFriendly,
+    breakfastIncluded
 }`
