@@ -44,7 +44,7 @@ router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
                  className="w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none">
                     <option value="All">All</option>
                     <option value="Standart">Standart room</option>
-                    <option value="Delux">Delux room</option>
+                    <option value="Deluxe">Deluxe room</option>
                     <option value="Suite">Suite room</option>
                 </select>
             </div>

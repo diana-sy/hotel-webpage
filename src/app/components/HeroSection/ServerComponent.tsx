@@ -20,7 +20,7 @@ export const imgHeroSection = (
         <div className="rounded-2xl overflow-hidden h-48">
             <Image 
             src="/images/hero-deluxe.jpg" 
-            alt="hero-deluxe"
+            alt="hero-delux"
             width={300}
             height={300}
             className="img scale-animation"

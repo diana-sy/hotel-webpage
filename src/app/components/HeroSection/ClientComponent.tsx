@@ -25,7 +25,7 @@ const {heroHeading, imgHeroSection} = props;
     <CountUpNumber endValue={60} duration={2000}/>
         </div>
         <div className="flex gap-3 flex-col items-center justify-center">
-    <p className="text-xs lg:text-xl text-center"> Delux room</p>
+    <p className="text-xs lg:text-xl text-center"> Deluxe room</p>
     <CountUpNumber endValue={20} duration={2000}/>
         </div>
         <div className="flex gap-3 flex-col items-center justify-center">

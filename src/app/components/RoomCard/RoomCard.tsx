@@ -24,14 +24,14 @@ const RoomCard: FC<Props> = props => {
             />
         </div>
 
-        <div className="p-4 bg-white dark:bg-black">
-            <div className="flex justify-between text-2xl font-semibold">
+        <div className="p-4 bg-white dark:bg-black ">
+            <div className="flex flex-col justify-between text-lg font-semibold h-24">
                 <p>{name}</p>
-                <p>{price} € </p>
-            </div>
+                <p className="text-secondary">{price}€</p>
                 <p className="pt-2 text-xs ">
-                    {type} Room
+                    {type} room
                 </p>
+            </div>
                 <p className="pt-3 pb-6">
                     {description.slice(1,100)}...
                 </p>
